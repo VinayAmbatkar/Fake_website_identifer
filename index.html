@@ -5,23 +5,169 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Website Verification</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* CSS for Blog Section */
+    #blogSection {
+      position: relative;
+      margin-top: 10px; /* Adjusted top margin */
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .blog {
+      margin-bottom: 20px;
+    }
+
+    .blog h3 {
+      color: #333;
+      margin-top: 0;
+    }
+
+    .blog p {
+      color: #666;
+    }
+
+    .blog a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .blog a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Styling */
+    @media screen and (min-width: 768px) {
+      #blogSection {
+        position: fixed;
+        top: 120px; /* Adjusted top position */
+        right: 20px;
+        width: 300px; /* Adjust width as needed */
+      }
+    }
+
+    /* CSS for Form Section */
+    .form-container {
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    .form-container h2 {
+      margin-top: 0;
+    }
+
+    .form-container form {
+      margin-top: 20px;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="email"],
+    .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .form-container button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      display: block; /* Ensure button is displayed as a block element */
+      width: 100%; /* Make button full width */
+    }
+
+    .form-container button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Responsive Styling for Form Container */
+    @media screen and (min-width: 768px) {
+      .form-container {
+        width: 300px;
+        position: fixed;
+        top: 180px; /* Adjusted top position */
+        /* right: 20px; */
+      }
+
+      .form-container button {
+        width: auto; /* Reset button width for larger screens */
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Website Verification</h1>
   </header>
   <div class="container">
-    <input type="text" id="urlInput" placeholder="Enter website URL">
-    <button onclick="verifyWebsite()">Verify</button>
-    <div id="verificationResult"></div>
+    <div id="verificationSection">
+      <h2>Verify Website</h2>
+      <form onsubmit="verifyWebsite(); return false;">
+        <input type="text" id="urlInput" placeholder="Enter website URL">
+        <button type="submit">Verify</button>
+        <div id="verificationResult"></div>
+      </form>
+      <img src="loading.gif" class="loading-gif" id="loadingGif" style="display: none;" alt="Loading">
+      <img src="success.gif" class="success-gif" id="successGif" style="display: none;" alt="Success">
+      <img src="failed.gif" class="failed-gif" id="failedGif" style="display: none;" alt="Failed">
+    </div>
   </div>
   <footer>
     <p>@Mini project by Group Mr. Ashish Gore</p>
   </footer>
 
-  <img src="loading.gif" class="loading-gif" id="loadingGif" style="display: none;" alt="Loading">
-  <img src="success.gif" class="success-gif" id="successGif" style="display: none;" alt="Success">
-  <img src="failed.gif" class="failed-gif" id="failedGif" style="display: none;" alt="Failed">
+  <div id="blogSection">
+    <h2>Blog Section</h2>
+    <div class="blog">
+      <h3>How to Identify Fake Websites</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed tristique urna. Nullam ac efficitur enim, sit amet ultrices elit.</p>
+      <p>Read more <a href="#">here</a>.</p>
+    </div>
+    <div class="blog">
+      <h3>Protect Yourself from Online Scams</h3>
+      <p>Integer fringilla tellus nec quam condimentum, in sollicitudin elit hendrerit. Fusce maximus libero at urna dapibus posuere.</p>
+      <p>Read more <a href="#">here</a>.</p>
+    </div>
+    <div class="blog">
+      <h3>The Importance of Secure Websites</h3>
+      <p>Sed eget est nec odio faucibus dignissim. Proin in finibus justo. Vivamus tincidunt vehicula tellus, nec efficitur ante cursus ac.</p>
+      <p>Read more <a href="#">here</a>.</p>
+    </div>
+  </div>
+
+  <!-- Form Section -->
+  
+  <div class="form-container">
+    <h2>Submit Potential Fake or Scam Website</h2>
+     
+<form action="https://api.web3forms.com/submit" method="POST">
+
+  <!-- Replace with your Access Key -->
+  <input type="hidden" name="access_key" value="3687f465-781f-4460-bfaf-7010fb862391">
+
+  <!-- Form Inputs. Each input must have a name="" attribute -->
+  <input type="text" name="name" placeholder="Enter Website Name" required>
+  <input type="url" name="url" placeholder="Enter url" required>
+  <textarea name="message" placeholder="Enter Details of Website" required></textarea>
+
+  <!-- hCaptcha Spam Protection -->
+  <div class="h-captcha" data-captcha="true"></div>
+
+  <button type="submit">Submit Form</button>
+
+</form>
+  </div>
+  <script src="https://web3forms.com/client/script.js" async defer></script>
   <script src="script.js"></script>
 </body>
 </html>
