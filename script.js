@@ -62,4 +62,39 @@ function isFakeWebsite(url, callback) {
       // Treat as not fake if there's an error loading the CSV file
       callback(false);
     });
+    // Function to check if a website is potentially fake based on various criteria
+async function isFakeWebsite(url, callback) {
+  // Check if the URL starts with "https"
+  const isHttps = url.startsWith('https://');
+
+  if (!isHttps) {
+      // If the URL doesn't start with "https", consider it failed
+      callback(true); // Return true for failure
+      return;
+  }
+
+  try {
+      // Fetch the website content
+      const response = await fetch(url);
+      const text = await response.text();
+
+      // Check for redirects
+      const isRedirect = response.redirected;
+
+      // Check for keywords indicating ads or scam content
+      const hasAds = text.includes("ad") || text.includes("advertisement");
+      const hasScamKeywords = text.includes("scam") || text.includes("fraud");
+
+      // Consider it a potential scam if it redirects or contains ads or scam keywords
+      const isPotentialScam = isRedirect || hasAds || hasScamKeywords;
+
+      // Return the result to the callback function
+      callback(isPotentialScam);
+  } catch (error) {
+      console.error("Error fetching website content:", error);
+      // Treat as a potential scam if there's an error fetching the website content
+      callback(true);
+  }
+}
+
 }

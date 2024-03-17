@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Website Verification</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* CSS for Blog Section */
     #blogSection {
-      position: relative;
-      margin-top: 10px; /* Adjusted top margin */
-      padding: 20px;
-      background-color: #f9f9f9;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+    position: relative;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-height: 400px; /* Set maximum height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
 
     .blog {
       margin-bottom: 20px;
@@ -42,9 +45,11 @@
     @media screen and (min-width: 768px) {
       #blogSection {
         position: fixed;
-        top: 120px; /* Adjusted top position */
+        top: 120px;
+        /* Adjusted top position */
         right: 20px;
-        width: 300px; /* Adjust width as needed */
+        width: 300px;
+        /* Adjust width as needed */
       }
     }
 
@@ -82,8 +87,10 @@
       border-radius: 5px;
       padding: 10px 20px;
       cursor: pointer;
-      display: block; /* Ensure button is displayed as a block element */
-      width: 100%; /* Make button full width */
+      display: block;
+      /* Ensure button is displayed as a block element */
+      width: 100%;
+      /* Make button full width */
     }
 
     .form-container button:hover {
@@ -95,16 +102,19 @@
       .form-container {
         width: 300px;
         position: fixed;
-        top: 180px; /* Adjusted top position */
+        top: 180px;
+        /* Adjusted top position */
         /* right: 20px; */
       }
 
       .form-container button {
-        width: auto; /* Reset button width for larger screens */
+        width: auto;
+        /* Reset button width for larger screens */
       }
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Website Verification</h1>
@@ -130,44 +140,49 @@
     <h2>Blog Section</h2>
     <div class="blog">
       <h3>How to Identify Fake Websites</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed tristique urna. Nullam ac efficitur enim, sit amet ultrices elit.</p>
-      <p>Read more <a href="#">here</a>.</p>
+      <p>In the age of digital transformation, knowing how to identify fake websites is not just helpful; it’s
+        absolutely necessary to protect yourself online. </p>
+      <p>Read more <a href="https://www.digicert.com/blog/how-to-identify-fake-websites">here</a>.</p>
     </div>
     <div class="blog">
-      <h3>Protect Yourself from Online Scams</h3>
-      <p>Integer fringilla tellus nec quam condimentum, in sollicitudin elit hendrerit. Fusce maximus libero at urna dapibus posuere.</p>
-      <p>Read more <a href="#">here</a>.</p>
+      <h3>Seven tips to avoid online fraud</h3>
+      <p>Every year, millions of consumers fall victim to cybercrime. According to the FBI’s Internet Crime Complaint
+        Center, in 2015, consumers lost more than $1 billion from scams initiated through the web. In recognition of
+        June Internet Safety Month, here are seven tips to help consumers protect themselves from online fraud..</p>
+      <p>Read more <a href="https://www.centralbank.net/personal/security/security-news/seven-tips-to-avoid-online-fraud/">here</a>.</p>
     </div>
     <div class="blog">
       <h3>The Importance of Secure Websites</h3>
-      <p>Sed eget est nec odio faucibus dignissim. Proin in finibus justo. Vivamus tincidunt vehicula tellus, nec efficitur ante cursus ac.</p>
+      <p>Sed eget est nec odio faucibus dignissim. Proin in finibus justo. Vivamus tincidunt vehicula tellus, nec
+        efficitur ante cursus ac.</p>
       <p>Read more <a href="#">here</a>.</p>
     </div>
   </div>
 
   <!-- Form Section -->
-  
+
   <div class="form-container">
     <h2>Submit Potential Fake or Scam Website</h2>
-     
-<form action="https://api.web3forms.com/submit" method="POST">
 
-  <!-- Replace with your Access Key -->
-  <input type="hidden" name="access_key" value="3687f465-781f-4460-bfaf-7010fb862391">
+    <form action="https://api.web3forms.com/submit" method="POST">
 
-  <!-- Form Inputs. Each input must have a name="" attribute -->
-  <input type="text" name="name" placeholder="Enter Website Name" required>
-  <input type="url" name="url" placeholder="Enter url" required>
-  <textarea name="message" placeholder="Enter Details of Website" required></textarea>
+      <!-- Replace with your Access Key -->
+      <input type="hidden" name="access_key" value="3687f465-781f-4460-bfaf-7010fb862391">
 
-  <!-- hCaptcha Spam Protection -->
-  <div class="h-captcha" data-captcha="true"></div>
+      <!-- Form Inputs. Each input must have a name="" attribute -->
+      <input type="text" name="name" placeholder="Enter Website Name" required>
+      <input type="url" name="url" placeholder="Enter url" required>
+      <textarea name="message" placeholder="Enter Details of Website" required></textarea>
 
-  <button type="submit">Submit Form</button>
+      <!-- hCaptcha Spam Protection -->
+      <div class="h-captcha" data-captcha="true"></div>
 
-</form>
+      <button type="submit">Submit Form</button>
+
+    </form>
   </div>
   <script src="https://web3forms.com/client/script.js" async defer></script>
   <script src="script.js"></script>
 </body>
+
 </html>
